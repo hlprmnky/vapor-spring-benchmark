@@ -1,0 +1,28 @@
+server:
+  port: 8581
+spring:
+  profiles: dev
+  application:
+    name: vapor-benchmark-dev
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite::memory
+  jpa:
+    database-platform: com.hlprmnky.vapor_spring_benchmark.SQLiteDialect
+    hibernate:
+      ddl-auto: create-drop
+---
+
+server:
+ port: 8580
+spring:
+  profiles: prod
+  application:
+    name: vapor-benchmark-dev
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:/home/helper/database/test.sqlite
+  jpa:
+    database-platform: com.hlprmnky.vapor_spring_benchmark.SQLiteDialect
+    hibernate:
+      ddl-auto: create-drop
