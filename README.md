@@ -5,7 +5,7 @@
 benchmarks run using various popular Web frameworks from other languages; this is the one for Java's [Spring Boot](https://spring.io) framework.
 
 ## Test Methodology
-This is the description of the benchmark tests each framework was to run. You can see that these each beecame a simple request handler in `ApplicationController.java`:
+This is the description of the benchmark tests each framework was to run. You can see that these each became a simple request handler in `ApplicationController.java`:
 
 ### Plaintext
 Request:
@@ -75,13 +75,16 @@ wrk -d 10 -t 4 -c 128 http://<host>:<port>/sqlite-fetch
 I started by cloning the [Spring REST service starter guide](https://github.com/spring-guides/gs-rest-service.git) to get a 
 REST service up and running as quickly as possible. I added code and tests for the three REST endpoints described above, then
 ran it locally in IntelliJ IDEA. Once I was satisfied that the code was working and had good-enough test coverage, I uploaded
-it to the server and ran it with `java -Dspring.profiles.active=prod -jar ./vapor-benchmark-0.1.0.jar` - you can see in 
-`application.yml` that I define a `dev` profile that creates a fresh SQLite DB locally, and a `prod` profile that expects to find
-the one provided for the benchmark.
+it to the server and ran it with 
+
+`java -Dspring.profiles.active=prod -jar ./vapor-benchmark-0.1.0.jar` 
+
+You can see in `application.yml` that I define a `dev` profile that creates a fresh SQLite DB locally, and a `prod` profile that 
+expects to find the one provided for the benchmark.
 
 # Challenges
 The single biggest challenge was working with SQLite instead of a "blessed" low-footprint DB like Derby or H2. In the end I had to 
-crib from a StackOverflow answer to get a Hibernate dialect that was compliant with Hibernate 4; the SQLite dialects you can find
+crib from [a StackOverflow answer](http://stackoverflow.com/questions/24232892/spring-boot-and-sqlite) to get a Hibernate dialect that was compliant with Hibernate 4; the SQLite dialects you can find
 on Maven Central are not up to date, and lead to a runtime crash with a suitably inscrutable exception. 
 
 # Conclusion
