@@ -1,7 +1,7 @@
 # Vapor benchmark - Spring-boot edition
 
 ## What it is
-[Vapor](https://qutheory.io/vapor/) is a Web framework written in Swift. The authors of [this benchmarking article](https://medium.com/@qutheory/server-side-swift-vs-the-other-guys-2-speed-ca65b2f79505) put out a call for help getting some 
+[Vapor](http://qutheory.io/) is a Web framework written in Swift. The authors of [this benchmarking article](https://medium.com/@qutheory/server-side-swift-vs-the-other-guys-2-speed-ca65b2f79505) put out a call for help getting some 
 benchmarks run using various popular Web frameworks from other languages; this is the one for Java's [Spring Boot](https://spring.io) framework.
 
 ## Test Methodology
